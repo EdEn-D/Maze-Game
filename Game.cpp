@@ -499,14 +499,6 @@ int Game::keyPressDetection() const
                 case '2':
                     returnValue = 22;
                     break;
-                case 'R':
-                case 'r':
-                    returnValue = 23;
-                    break;
-                case 'T':
-                case 't':
-                    returnValue = 24;
-                    break;
             }
     }while(returnValue == -1); // did we get a valid key?
 
@@ -543,6 +535,7 @@ int Game::keyPressDetectionAtStartUp() const
 
 void Game::eraseRoom(int x, int y) const
 {
+    if (!inBounds(x/5, y/3)) throw "Room out of bounds";
     setCursorCoord(x, y);
     wcout << "     ";
     setCursorCoord(x, y+1);

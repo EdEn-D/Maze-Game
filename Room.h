@@ -28,7 +28,6 @@ using namespace std;
 #define WALL_COLOR MAGENTA
 #define PRIZE_COLOR GREEN
 
-// static void setCursorCoord(int column, int row);
 extern void setCursorCoord(const int column, const int row);
 
 class Room

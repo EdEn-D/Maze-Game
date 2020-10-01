@@ -6,11 +6,9 @@
 class Player
 {
 private:
-	int _playerNumber = 0;
 	int _score = 0;
 	int _x = 0;
 	int _y = 0;
-	int _ethnicity = 0;
 	bool _ai = false;
 public:
 	Player();

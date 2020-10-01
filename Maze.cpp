@@ -26,6 +26,7 @@ void Maze::printMaze() const
     }    
 }
 
+// returns the location of the treasure by receving the treasure number
 int Maze::getGoldRoom(const int i) const
 {
 	if (i < 0 || i > _tresCount-1) throw "Invalid treasure number";
@@ -136,10 +137,9 @@ void Maze::buildGoldPaths(const int count)
 			}
 			// move down
 			if (pathDir >= 80 && pathDir <= 89) {
-				if (inBounds(goldX, goldY + 1)) {
+					if (inBounds(goldX, goldY + 1)) {
 					_rooms[goldX][goldY].toggleDoors(2);
-					goldY++;
-					_rooms[goldX][goldY].toggleDoors(0);
+					_rooms[goldX][goldY+1].toggleDoors(0);
 				}
 			}
 			// move left

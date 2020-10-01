@@ -18,15 +18,11 @@ class Game
 {
 private:
     Maze _mazes[NUM_OF_ROUNDS];
-    int _mainPlayerX = 0;
-    int _mainPlayerY = 0;
     Player _players[NUM_OF_PLAYERS];
-    bool _playerVSai = 1;
-    int _roundNumber = 0;
 public:
     Game();
-    
     void start();
+
 private:
     int playGame(const bool aiVSai, const bool testRun);
     void endGame(const int winner);

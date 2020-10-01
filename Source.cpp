@@ -26,11 +26,16 @@ int main()
 	SetConsoleCursorInfo(out, &cursorInfo);
 
 	// setup console so it is able to print unicode characters in the console
-	_setmode(_fileno(stdout), _O_U16TEXT);
+	int x = _setmode(_fileno(stdout), _O_U16TEXT);
 
 	
 	Game game1;
-	game1.start();
+	try {
+		game1.start();
+	}
+	catch (const char* err) {
+			cout << "ERROR: " << err << endl;
+	}
 
 	//system("pause"); // uncomment for excecutable file
 return 0;
